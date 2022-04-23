@@ -1,0 +1,8 @@
+<div>
+  <p>Bird:</p>
+  <p *ngFor="let animal of animals | animalFilterPipe: 0">{{animal.name}}</p>
+  <p>Mammal:</p>
+  <p *ngFor="let animal of animals | animalFilterPipe: 2">{{animal.name}}</p>
+  <p>Reptile:</p>
+  <p *ngFor="let animal of animals | animalFilterPipe: 1">{{animal.name}}</p>
+</div>
