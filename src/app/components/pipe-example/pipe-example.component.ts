@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Animal, AnimalType} from "../../models/animal";
+import {AnimalService} from "../../services/animal.service";
 
 @Component({
   selector: 'app-pipes-example',
@@ -8,29 +9,10 @@ import {Animal, AnimalType} from "../../models/animal";
 })
 export class PipeExampleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private animalService: AnimalService) { }
 
   ngOnInit(): void {
   }
 
-  animals: Animal[] = [{
-    type: AnimalType.MAMMAL,
-    name: 'Mammal1'
-  },{
-    type: AnimalType.MAMMAL,
-    name: 'Mammal2'
-  },{
-    type: AnimalType.BIRD,
-    name: 'Birb1'
-  },{
-    type: AnimalType.BIRD,
-    name: 'Birb2'
-  },{
-    type: AnimalType.REPTILE,
-    name: 'Reptile1'
-  },{
-    type: AnimalType.REPTILE,
-    name: 'Reptile2'
-  },
-  ]
+  animals = this.animalService.getAllAnimals();
 }
