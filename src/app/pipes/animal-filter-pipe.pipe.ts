@@ -6,7 +6,7 @@ import {Animal, AnimalType} from "../models/animal";
 })
 export class AnimalFilterPipePipe implements PipeTransform {
 
-  transform(value: Animal[], animalType: AnimalType): unknown {
+  transform(value: Animal[], animalType: AnimalType): Animal[] {
     return value.filter((animal) => animal.type === animalType);
   }
 
