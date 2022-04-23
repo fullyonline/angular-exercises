@@ -8,6 +8,8 @@ import {FormsModule} from "@angular/forms";
 import { ParentTextComponent } from './components/parent-text/parent-text.component';
 import { PipeExampleComponent } from './components/pipe-example/pipe-example.component';
 import { AnimalFilterPipePipe } from './pipes/animal-filter-pipe.pipe';
+import { JokeServiceComponent } from './components/joke-service/joke-service.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { AnimalFilterPipePipe } from './pipes/animal-filter-pipe.pipe';
     ChildTextComponent,
     ParentTextComponent,
     PipeExampleComponent,
-    AnimalFilterPipePipe
+    AnimalFilterPipePipe,
+    JokeServiceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
