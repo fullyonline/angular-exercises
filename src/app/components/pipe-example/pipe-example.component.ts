@@ -11,8 +11,10 @@ export class PipeExampleComponent implements OnInit {
 
   constructor(private animalService: AnimalService) { }
 
+  animals: Animal[] = [];
+
   ngOnInit(): void {
+    this.animals = this.animalService.getAllAnimals();
   }
 
-  animals = this.animalService.getAllAnimals();
 }
